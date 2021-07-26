@@ -2,6 +2,8 @@ global.Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
 const config = require('./config.json');
+const { MongoClient } = require('mongodb')
+const url = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
 
 client.commands = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
