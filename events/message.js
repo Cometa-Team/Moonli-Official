@@ -1,7 +1,5 @@
 const config = require('.././config.json');
 const configdev = config.developers;
-const { MongoClient } = require('mongodb')
-const url = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
 const Discord = require("discord.js");
 client.mongo = new MongoClient(url)
 
