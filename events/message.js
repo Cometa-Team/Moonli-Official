@@ -3,7 +3,6 @@ const configdev = config.bot.developers;
 global.mongodb = require("mongodb")
 const uri = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
 
-})
 module.exports = {
 	name: 'message',
 	once: false,
