@@ -1,29 +1,5 @@
 const config = require('.././config.json');
 const configdev = config.developers;
-const { MongoClient } = require('mongodb')
-const url = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
-const Discord = require("discord.js");
-client.mongo = new MongoClient(url)
-
-// Database Name
-const dbName = 'AntiCrash'
-
-async function main() {
-  // Use connect method to connect to the server
-  await client.connect()
-  console.log('Подключение к Базе Данных прошло успешно!')
-  const db = client.db(dbName)
-  const collection = db.collection('AntiCrash')
-
-  // the following code examples can be pasted here...
-
-  return 'done.'
-}
-
-main()
-  .then(console.log)
-  .catch(console.error)
-  .finally(() => client.close())
 
 module.exports = {
 	name: 'message',

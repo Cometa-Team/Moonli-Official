@@ -2,6 +2,9 @@ global.Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
 const config = require('./config.json');
+const { MongoClient } = require('mongodb')
+const url = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
+const Discord = require("discord.js");
 
 client.commands = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
@@ -9,7 +12,27 @@ client.errors = require('./data/errors.json');
 client.emotes = require("./data/emojis.json");
 client.colors = require("./data/colors.json");
 client.aliases = new Discord.Collection();
+client.mongo = new MongoClient(url)
 
+/ Database Name
+const dbName = 'AntiCrash'
+
+async function main() {
+  // Use connect method to connect to the server
+  await client.connect()
+  console.log('Подключение к Базе Данных прошло успешно!')
+  const db = client.db(dbName)
+  const collection = db.collection('AntiCrash')
+
+  // the following code examples can be pasted here...
+
+  return 'done.'
+}
+
+main()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close())
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
