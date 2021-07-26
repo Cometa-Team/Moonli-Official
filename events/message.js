@@ -1,5 +1,5 @@
 const config = require('.././config.json');
-const configdev = config.bot.developers;
+const configdev = config.developers;
 global.mongodb = require("mongodb")
 const uri = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
 
