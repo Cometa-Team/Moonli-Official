@@ -1,12 +1,8 @@
 const config = require('.././config.json');
 const configdev = config.bot.developers;
-global.mongoose = require('mongoose');
-global.Guild = require("../data/guild.js");
-global.User = require('../data/user.js');
+global.mongodb = require("mongodb")
 const uri = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connection.on('connected',()=>{
-  console.log('[✅] База Данных подключена!')
+
 })
 module.exports = {
 	name: 'message',
@@ -14,17 +10,10 @@ module.exports = {
 	async execute(message, client) {
 	    
 	    if(message.author.bot) return;
-	    
-	    client.nodb = (user) => message.channel.send(new Discord.MessageEmbed().setColor(0x0000ff).setDescription(`К сожелению **${user.tag}** нету в базе-данных.`));
-	    let cl = client.channels.cache.get("799935806323818506")
-	    let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
+
        let cooldowns = client.cooldowns;
-	    let guild = await Guild.findOne({ guildID: message.guild.id, prefix: config.bot.prefix });
-	    if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id }); cl.send(`\`[✅ База Данных]\` **${message.author.username}** Успешно был(а) добавлен(а) в бд!`) }
-	    if(!guild) { Guild.create({ guildID: message.guild.id }); cl.send(`\`[✅ База Данных]\` **${message.guild.name}** Успешно была добавлена в бд!`); }
-      
-      if (!message.content.startsWith(guild.prefix)) return;
-      const args = message.content.slice(guild.prefix.length).trim().split(/ +/g);
+       if (!message.content.startsWith(config.prefix)) return;
+      const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
       const commandName = args.shift().toLowerCase();
       const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
       if (!command) return;
@@ -34,7 +23,7 @@ module.exports = {
       if (command.args && !args.length) {
         let reply = `Вы не правильно написали, ${message.author}!\n\n`;
         if (command.usage) {
-          reply += `Правильное использование команды: \`${prefix}${command.name} ${command.usage}\``;
+          reply += `Правильное использование команды: \`${config.prefix}${command.name} ${command.usage}\``;
         }
         return message.channel.send(reply);
       }
@@ -68,7 +57,7 @@ module.exports = {
         console.log('Ошибка у бота!');
       }
       
-      if(message.content === `${guild.prefix}${command.name}`) {
+      if(message.content === `${config.prefix}${command.name}`) {
         if(message.author.id === "720997951119425576") return
         client.channels.cache.get("799935806323818506").send(new Discord.MessageEmbed()
         .setAuthor(client.user.username, client.user.avatarURL())
