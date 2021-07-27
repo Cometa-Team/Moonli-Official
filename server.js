@@ -16,9 +16,9 @@ client.mongo = new MongoClient(url)
 const dbName = 'AntiCrash'
 
 async function main() {
-  await client.connect()
+  await client.mongo.connect()
   console.log('Подключение к Базе Данных прошло успешно!')
-  const db = client.db(dbName)
+  const db = client.mongo.db(dbName)
   const collection = db.collection('AntiCrash')
   return 'done.'
 }

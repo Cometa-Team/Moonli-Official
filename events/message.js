@@ -14,6 +14,7 @@ module.exports = {
       const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
       const commandName = args.shift().toLowerCase();
       const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
+      client.mongodb.db.collection.updateOne({ id: message.author.id })
       if (!command) return;
       if (command.guildOnly && message.channel.type !== 'dm') {
         return message.reply('Команды нельзя писать в лс!');
@@ -26,7 +27,7 @@ module.exports = {
         return message.channel.send(reply);
       }
       if(!configdev.includes(message.author.id) && command.admin == true) {
-        console.log(`${message.author.tag} пытался использовать admin команду!`);
+        console.log(`${message.author.onntag} пытался использовать admin команду!`);
         return message.react('❌');
       }
       if (!cooldowns.has(command.name)) {
