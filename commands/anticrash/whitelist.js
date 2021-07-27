@@ -4,7 +4,8 @@ module.exports = {
     async execute(client, message, args) {
         let embed = new DiscordMessageEmbed()
         .setTitle("Вайтлист")
-        .setColor(0x0000ff)
+        .setColor(0x00ff09)
         .setDescription("Скоро...")
+        message.channel.send(embed)
     }
 }
