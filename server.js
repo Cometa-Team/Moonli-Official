@@ -26,7 +26,7 @@ async function main() {
 main()
   .then(console.log)
   .catch(console.error)
-  .finally(() => client.close())
+  .finally(() => client.mongo.close())
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
