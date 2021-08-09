@@ -20,13 +20,12 @@ async function main() {
   console.log('Подключение к Базе Данных прошло успешно!')
   const db = client.mongo.db(dbName)
   const collection = db.collection('AntiCrash')
-  return 'done.'
+  return 'Подключено!'
 }
 
 main()
   .then(console.log)
-  .catch(console.error)
-  .finally(() => client.mongo.close())
+  .catch(console.error))
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
