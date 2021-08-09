@@ -9,6 +9,6 @@ module.exports = {
 		.setColor(0x00ff09)
 		.setDescription(`Мой пинг: ${client.ws.ping}ms`)
 		.setTimestamp()
-		message.reply(embed)
+		message.channel.send(embed)
  }
 }
