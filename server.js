@@ -50,16 +50,4 @@ for (const folder of commandFolders) {
 	}
 }
 
-const wait = require('util').promisify(setTimeout);
-
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
-
-	if (interaction.commandName === 'ping') {
-		await interaction.deferReply();
-		await wait(4000);
-		await interaction.editReply('Pong!');
-	}
-});
-
 client.login(config.token);
