@@ -14,7 +14,7 @@ module.exports = {
       const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
       const commandName = args.shift().toLowerCase();
       const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
-      client.mongo.db.collection.updateOne({ id: message.author.id }, { $set: { id: message.author.id, whitelist: 'off', badges: [], money: '0' }}, { upsert: true })
+      client.mongo.db('AntiCrash').collection('AntiCrash').updateOne({ id: message.author.id }, { $set: { id: message.author.id, whitelist: 'off', badges: [], money: '0' }}, { upsert: true })
       if (!command) return;
       if (command.guildOnly && message.channel.type !== 'dm') {
         return message.reply('Команды нельзя писать в лс!');
