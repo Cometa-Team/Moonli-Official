@@ -1,14 +1,13 @@
-const { Message, Client } = require("discord.js");
+const Discord = require("discord.js");
 
 module.exports = {
     name: "ping",
-    /**
-     *
-     * @param {Client} client
-     * @param {Message} message
-     * @param {String[]} args
-     */
-    async execute(client, message, args) => {
-        message.channel.send(`${client.ws.ping}ms`);
+    async execute(client, message, args) {
+        let embed = Discord.MessageEmbed()
+        .setTitle("Пинг")
+        .setDescription(`${client.ws.ping}ms`)
+        .setTimestamp()
+        message.reply(embed)
+        //message.channel.send(`${client.ws.ping}ms`);
     },
 };
