@@ -1,16 +1,16 @@
 const { Discord, Client, Intents } = require('discord.js');
-const client = new Discord.Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const fs = require('fs');
 const config = require('./config.json');
 const { MongoClient } = require('mongodb')
 const url = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
 
-client.commands = new Discord.Collection();
-client.cooldowns = new Discord.Collection();
+client.commands = new Collection();
+client.cooldowns = new Collection();
 client.errors = require('./data/errors.json');
 client.emotes = require("./data/emojis.json");
 client.colors = require("./data/colors.json");
-client.aliases = new Discord.Collection();
+client.aliases = new Collection();
 client.mongo = new MongoClient(url)
 
 const dbName = 'AntiCrash'
