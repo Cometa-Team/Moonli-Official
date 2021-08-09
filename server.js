@@ -25,7 +25,7 @@ async function main() {
 
 main()
   .then(console.log)
-  .catch(console.error))
+  .catch(console.error)
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
