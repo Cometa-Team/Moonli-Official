@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
+const { Client, Intents } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const fs = require('fs');
-const client = new Discord.Client();
 const config = require('./config.json');
 const { MongoClient } = require('mongodb')
 const url = "mongodb+srv://MongoDB:MINICAT2019@cluster0.ssaj6.mongodb.net/AntiCrashBot?retryWrites=true&w=majority";
