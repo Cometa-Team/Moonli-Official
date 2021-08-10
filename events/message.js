@@ -3,7 +3,7 @@ const configdev = config.developers;
 const Discord = require("discord.js");
 
 module.exports = {
-	name: 'message',
+	name: 'messageCreate',
 	once: false,
 	async execute(message, client) {
 	    
