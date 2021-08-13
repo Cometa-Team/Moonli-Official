@@ -38,6 +38,10 @@ for (const folder of commandFolders) {
 	}
 }
 
+client.on("messageCreate", message => {
+  console.log('Эвент messageCreate запущен!')
+});
+
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 
@@ -62,9 +66,5 @@ const rest = new REST({ version: '9' }).setToken(config.token);
     console.error(error);
   }
 })();
-
-client.on("messageCreate", message => {
-  console.log('Эвент messageCreate запущен!')
-});
 
 client.login(config.token);
