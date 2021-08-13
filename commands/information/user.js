@@ -8,6 +8,6 @@ module.exports = {
         .setTitle("Информация о пользователе")
         .setColor(0x00ff09)
         .setDescription("Скоро...")
-        channel.send(content: embed)
+        message.channel.send({ content: embed })
     }
 }
