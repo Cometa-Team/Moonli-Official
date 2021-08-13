@@ -17,14 +17,14 @@ module.exports = {
       //client.mongo.db('AntiCrash').collection('AntiCrash').updateOne({ id: message.author.id }, { $set: { id: message.author.id, whitelist: 'off', badges: [], money: '0' }}, { upsert: true })
       if (!command) return;
       if (command.guildOnly && message.channel.type !== 'dm') {
-        return message.channel.send(content: 'Команды нельзя писать в лс!');
+        return message.channel.send({ content: 'Команды нельзя писать в лс!' });
       }
       if (command.args && !args.length) {
         let reply = `Вы не правильно написали, ${message.author}!\n\n`;
         if (command.usage) {
           reply += `Правильное использование команды: \`${config.prefix}${command.name} ${command.usage}\``;
         }
-        return message.channel.send(content: reply);
+        return message.channel.send({ content: reply });
       }
       if(!configdev.includes(message.author.id) && command.admin == true) {
         console.log(`${message.author.onntag} пытался использовать admin команду!`);
@@ -40,7 +40,7 @@ module.exports = {
         const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
         if (now < expirationTime) {
           const timeLeft = (expirationTime - now) / 1000;
-          return message.channel.send(content: `Пожалуйста, подожди еще ${timeLeft.toFixed(1)} секунд(ы) прежде чем использовать команду \`${command.name}\``);
+          return message.channel.send({ content: `Пожалуйста, подожди еще ${timeLeft.toFixed(1)} секунд(ы) прежде чем использовать команду \`${command.name}\`` });
         }
       }
       timestamps.set(message.author.id, now);
