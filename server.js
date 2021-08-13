@@ -63,4 +63,8 @@ const rest = new REST({ version: '9' }).setToken(config.token);
   }
 })();
 
+client.on("messageCreate", message => {
+  console.log('Эвент messageCreate запущен!')
+});
+
 client.login(config.token);
