@@ -7,7 +7,7 @@ module.exports = {
         .setTitle("Пинг")
         .setDescription(`${client.ws.ping}ms`)
         .setTimestamp()
-        message.reply({ content: embed })
+        message.reply({ embed: [embed] });
         //message.channel.send(`${client.ws.ping}ms`);
     },
 };
