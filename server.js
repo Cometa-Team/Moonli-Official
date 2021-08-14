@@ -41,30 +41,4 @@ for (const folder of commandFolders) {
 client.on("messageCreate", message => {
   console.log('Эвент messageCreate запущен!')
 
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
-
-const commands = [{
-  name: 'ping',
-  description: 'Replies with Pong!'
-}]; 
-
-const rest = new REST({ version: '9' }).setToken(config.token);
-
-(async () => {
-  try {
-    console.log('Started refreshing application (/) commands.');
-
-    await rest.put(
-      Routes.applicationGuildCommands(869200812969185330, message.guild.id),
-      { body: commands },
-    );
-
-    console.log('Successfully reloaded application (/) commands.');
-  } catch (error) {
-    console.error(error);
-  }
-})();
-});
-
 client.login(config.token);
