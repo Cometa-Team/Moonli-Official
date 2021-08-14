@@ -43,7 +43,7 @@ module.exports = {
       	  .setTitle(`Eval`)
           .setDescription(`Ошибка
   \n\`${err}\``)
-  message.channel.send({ content: errembed })
+  message.channel.send({ embed: [errembed] })
   }
 }
 };
