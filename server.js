@@ -40,5 +40,6 @@ for (const folder of commandFolders) {
 
 client.on("messageCreate", message => {
   console.log('Эвент messageCreate запущен!')
+});
 
 client.login(config.token);
