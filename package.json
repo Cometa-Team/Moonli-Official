@@ -11,10 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^13.1.0",
-    "mongodb": "^4.0.1"
+    "mongodb": "^4.0.1",
+    "pretty-ms": "^7.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.27.0"
+    "eslint": "^7.27.0",
+    "nodemon": "^2.0.12"
   },
   "engines": {
     "node": "16.6.0",
