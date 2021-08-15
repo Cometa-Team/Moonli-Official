@@ -1,5 +1,5 @@
 const { Client, Intents, Collection } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [Intents.ALL] });
 const fs = require('fs');
 client.config = require('./config.json');
 client.commands = new Collection();
