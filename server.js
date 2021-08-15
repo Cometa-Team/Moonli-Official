@@ -46,11 +46,11 @@ client.on('interactionCreate', async interaction => {
 
 const { MongoClient } = require('mongodb');
 const uri = "mongodb+srv://vynixh:MINICAT2019@vynix.51j3t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const cl = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-cl.connect(err => {
-  const collection = client.db("Vynix").collection("VynixHelper");
+client.mongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.mongo.connect(err => {
+  const collection = client.mongo.db("Vynix").collection("VynixHelper");
   // perform actions on the collection object
-  cl.close();
+  client.mongo.close();
 });
 
 client.login(client.config.token)
