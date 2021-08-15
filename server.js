@@ -7,7 +7,7 @@ client.cooldowns = new Collection();
 client.errors = require('./data/errors.json');
 client.emotes = require("./data/emojis.json");
 client.colors = require("./data/colors.json");
-client.shards = new ShardingManager("./shards.js")
+//client.shards = new ShardingManager("./shards.js")
 client.aliases = new Collection();
 client.cache = {
   reactions: new Map()
