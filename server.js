@@ -45,7 +45,7 @@ client.on('interactionCreate', async interaction => {
 
 
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://vynixh:<password>@vynix.51j3t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://vynixh:MINICAT2019@vynix.51j3t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("Vynix").collection("VynixHelper");
