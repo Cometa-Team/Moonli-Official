@@ -1,19 +1,17 @@
-global.Discord = require('discord.js');
+const { Client, Intents, Collection } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const fs = require('fs');
-const client = new Discord.Client();
 client.config = require('./config.json');
-client.commands = new Discord.Collection();
-client.cooldowns = new Discord.Collection();
+client.commands = new Collection();
+client.cooldowns = new Collection();
 client.errors = require('./data/errors.json');
 client.emotes = require("./data/emojis.json");
 client.colors = require("./data/colors.json");
-client.shards = new Discord.ShardingManager("./shards.js")
-client.aliases = new Discord.Collection();
+client.shards = new ShardingManager("./shards.js")
+client.aliases = new Collection();
 client.cache = {
   reactions: new Map()
 }
-
-require("./pysk.js");
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
@@ -37,14 +35,12 @@ for (const folder of commandFolders) {
 	}
 }
 
+client.on('interactionCreate', async interaction => {
+  if (!interaction.isCommand()) return;
+
+  if (interaction.commandName === 'ping') {
+    await interaction.reply('Pong!');
+  }
+});
 
 client.login(client.config.token)
-
-const express = require('express')
-const app = express()
- 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
- 
-app.listen(3000)
