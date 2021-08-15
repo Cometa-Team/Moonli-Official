@@ -11,8 +11,7 @@ module.exports = {
     let members = client.guilds.cache.members
     let adm = client.users.cache.get("852984192421199923")
     let user = message.author;
-  message.channel.send(
-      new Discord.MessageEmbed()
+      let bot = new Discord.MessageEmbed()
       .setColor(0x00ff00)
       .setTitle(`Версия бота: ${version}`)
       .setDescription(`Автор бота: ${author} \nЕго тег ${adm.tag}`)
@@ -24,6 +23,7 @@ module.exports = {
       .addField('Всего команд:', `${client.commands.size}`,true)
       .addField('Node js:', `${process.version} на ${process.platform} ${process.arch}`,true)
       .addField('Библиотека Djs', `${discordjsVersion}`,true)
+      message.reply({ embeds: [bot] })
   )
  }
 }
