@@ -1,9 +1,9 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "ping",
     async execute(client, message, args) {
-        let embed = Discord.MessageEmbed()
+        let embed = new MessageEmbed()
         .setTitle("Пинг")
         .setDescription(`${client.ws.ping}ms`)
         .setTimestamp()
