@@ -6,7 +6,6 @@ const { author } = require('../../package.json');
 
 module.exports = {
   name: "bot",
-  category: "user",
   async execute(client, message, args) {
     let members = client.guilds.cache.members
     let adm = client.users.cache.get("852984192421199923")
@@ -24,6 +23,5 @@ module.exports = {
       .addField('Node js:', `${process.version} на ${process.platform} ${process.arch}`,true)
       .addField('Библиотека Djs', `${discordjsVersion}`,true)
       message.reply({ embeds: [bot] })
-  )
  }
 }
