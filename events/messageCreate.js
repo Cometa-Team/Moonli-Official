@@ -2,7 +2,7 @@ const config = require("../config.json");
 const configdev = config.developers;
 
 module.exports = {
-	name: 'message',
+	name: 'messageCreate',
 	once: false,
 	async execute(message, client) {
 	    
