@@ -37,13 +37,13 @@ module.exports = {
           **Тип:** \`${tyyype[tyype]}\`
           **Готово за:** \`${new Date().getTime() - message.createdTimestamp + 'ms'}\`
           **Вход:**\`\`\`js\n${args.join(' ')} \`\`\`\n**Выход:**\`\`\`js\n${evaled}\`\`\``)
-          message.channel.send({ embeds: [embed] })
+          message.reply({ embeds: [embed] })
       	} catch(err) {
       	  let errembed = new Discord.MessageEmbed()
       	  .setTitle(`Eval`)
           .setDescription(`Ошибка
   \n\`${err}\``)
-  message.channel.send({ embeds: [errembed] })
+  message.reply({ embeds: [errembed] })
   }
 }
 };
