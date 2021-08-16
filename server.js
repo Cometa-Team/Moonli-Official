@@ -13,10 +13,6 @@ client.cache = {
   reactions: new Map()
 }
 
-// Верефикация для Support Сервера
-require("./react-verify.js");
-// Верефикация для Support Сервера
-
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
 for (const file of eventFiles) {
