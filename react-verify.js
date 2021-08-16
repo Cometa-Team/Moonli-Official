@@ -4,7 +4,7 @@
 const Discord = require("discord.js");
 const chalk = require("chalk");
 const moment = require("moment");
-const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE } = require("config.json");
+const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE } = require("./config.json");
 
 const client = new Discord.Client({
   disableEveryone: true
