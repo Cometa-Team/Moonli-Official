@@ -14,7 +14,7 @@ client.cache = {
 }
 
 // Верефикация для Support Сервера
-require("react-verify");
+require("./react-verify");
 // Верефикация для Support Сервера
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
