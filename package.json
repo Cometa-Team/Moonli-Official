@@ -1,6 +1,6 @@
 {
   "name": "crashprotect",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -12,7 +12,9 @@
   "dependencies": {
     "discord.js": "^13.1.0",
     "mongodb": "^4.0.1",
-    "pretty-ms": "^7.0.1"
+    "pretty-ms": "^7.0.1",
+    "chalk": "4.1.2",
+    "moment": "2.29.1"
   },
   "devDependencies": {
     "eslint": "^7.27.0",
