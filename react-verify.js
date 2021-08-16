@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-const { Client, Intents, Collection } = require('discord.js');
+const { Discord, Intents, Collection } = require('discord.js');
 const chalk = require("chalk");
 const moment = require("moment");
 const { BOT_TOKEN, VERIFICATION_CHANNEL, VERIFIED_ROLE } = require("./config.json");
