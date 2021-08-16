@@ -15,7 +15,7 @@ client.once("ready", () => {
   console.log(chalk.greenBright("[READY]"), `Logged in as ${client.user.tag} (${client.user.id}) at ${moment().format("DD MMMM YYYY, hh:mm:ss")}`);
 });
 
-client.on("message", message => {
+client.on("messageCreate", message => {
   if (!message.guild) return;
   if (message.author.bot) return;
   if (message.content === "agree" && message.channel.id === VERIFICATION_CHANNEL) {
