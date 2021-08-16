@@ -10,7 +10,7 @@ module.exports = {
         .setDescription(`Овнер: ${message.guild.ownerID}
 Айди: ${message.guild.id}
 Название: ${message.guild.name}
-Участников: ${memberCount}
+Участников: ${message.guild.memberCount}
 Канал с новостями: ${news}
 Уровень сложности: ${message.guild.verificationLevel}
 Локация: ${message.guild.preferredLocale}`)
