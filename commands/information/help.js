@@ -14,7 +14,7 @@ module.exports = {
           let embed = new MessageEmbed()
           .setTitle(`Команды`)
           .setColor(0x0000FF)
-          .setDescription(`Узнать информацию о команде: ${data.prefix}help <команда>(Команду без <> указывать!).
+          .setDescription(`Узнать информацию о команде: ${data.prefix}help <команда>(Команду без <> указывать!)`)
 Команды для участников:
 ${information}
 Фан команды:
