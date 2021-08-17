@@ -6,6 +6,8 @@ const { author } = require('../../package.json');
 
 module.exports = {
   name: "bot",
+  description: "Информация о боте",
+  category: "information",
   async execute(client, message, args) {
     let members = client.guilds.cache.members
     let adm = client.users.cache.get("852984192421199923")
