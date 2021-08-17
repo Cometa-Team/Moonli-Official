@@ -13,7 +13,7 @@ module.exports = {
           .setColor(0x000000)
           .setImage(json.link)
           .setTimestamp()
-          message.channel.send(embed)
+          message.channel.send({ embeds: [embed] })
         })
   }
 }
