@@ -22,7 +22,7 @@ ${fun}`)
           message.channel.send({ embeds: [embed] })
         }else{
           let cmd = client.commands.get(args[0]);
-          if(!cmd) return message.reply("команда не найдена!")
+          if(!cmd) return message.reply({ content: "Команда не найдена!" })
           let helpcmd = new Discord.MessageEmbed()
           .setTitle(`Информация о команде ${args[0]}`)
           .setColor(0x0000ff)
