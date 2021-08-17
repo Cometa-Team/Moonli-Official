@@ -19,7 +19,7 @@ module.exports = {
 ${information}
 Фан команды:
 ${fun}`)
-          message.channel.send(embed)
+          message.channel.send({ embeds: [embed] })
         }else{
           let cmd = client.commands.get(args[0]);
           if(!cmd) return message.reply("команда не найдена!")
@@ -31,7 +31,7 @@ ${fun}`)
 Алиасы: ${cmd.aliases || 'Нет'},
 Использование: ${cmd.usage || 'Нет'},
 Категория: ${cmd.category || 'Нет'}`)
-          message.channel.send(helpcmd)
+          message.channel.send({ embeds: [helpcmd] })
         }
  }
 }
