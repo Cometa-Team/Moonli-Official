@@ -3,6 +3,8 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "serverinfo",
     aliases: "si",
+    description: "Информация о сервере",
+    category: "information",
     async execute(client, message, args) {
         let news = message.guild.publicUpdatesChannelId || 'Нету'
         let embed = new MessageEmbed()
