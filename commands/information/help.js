@@ -10,7 +10,7 @@ module.exports = {
           let prefix = `${config.prefix}`
           const user = client.commands.filter(c => c.category === "information").map(c => `${prefix}${c.name}`).join("\n") || 'Нет'
           //const admin = client.commands.filter(c => c.category === "admin").map(c => `${prefix}${c.name}`).join("\n") || 'Нет'
-          const fun = client.commands.filter(c => c.category === "fun").map(c => `**${prefix}${c.name}** - ${c.description}`).join("\n") || 'Нет'
+          const fun = client.commands.filter(c => c.category === "fun").map(c => `${prefix}${c.name}`).join("\n") || 'Нет'
           let embed = new MessageEmbed()
           .setTitle(`Команды`)
           .setColor(0x0000FF)
