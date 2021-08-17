@@ -15,7 +15,7 @@ module.exports = {
       const commandName = args.shift().toLowerCase();
       const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
       if (!command) return;
-      let user client.database.collection('Users').findOne({ id: message.author.id })
+      let user = client.database.collection('Users').findOne({ id: message.author.id })
       if(!user) { client.database.collection('Users').updateOne({ id: message.author.id }, { $set: { id: message.author.id, whitelist: 'off', badges: [], money: '0' }}, { upsert: true }); } 
       //if(message.channel.type === 'dm') {
         //return newGuildHook1.send(
