@@ -2,14 +2,14 @@ const { MessageEmbed } = require("discord.js")
 const api = require("node-fetch")
 
 module.exports = {
-  name: 'penguin',
+  name: 'fox',
   category: 'fun',
   async execute(client, message, args) {
-    let res = api("https://some-random-api.ml/img/penguin")
+    let res = api("https://some-random-api.ml/img/fox")
         .then(res => res.json())
         .then(json => {
           const embed = new MessageEmbed()
-          .setTitle("Пингвин")
+          .setTitle("Лиса")
           .setColor(0x000000)
           .setImage(json.link)
           .setTimestamp()
