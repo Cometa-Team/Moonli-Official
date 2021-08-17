@@ -9,7 +9,6 @@ client.emotes = require("./data/emojis.json");
 client.colors = require("./data/colors.json");
 //client.shards = new ShardingManager("./shards.js");
 client.aliases = new Collection();
-client.database = client.mongo.db('Vynix')
 client.cache = {
   reactions: new Map()
 }
@@ -48,6 +47,7 @@ client.on('interactionCreate', async interaction => {
 const { MongoClient } = require('mongodb');
 const uri = "mongodb+srv://vynixh:vynixh1@vynix.51j3t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 client.mongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.database = client.mongo.db('Vynix')
 client.mongo.connect(err => {
   const collection = client.mongo.db("Vynix").collection("VynixHelper");
   // perform actions on the collection object
