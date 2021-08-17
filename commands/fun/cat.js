@@ -1,4 +1,4 @@
-const Discord = require("discord.js")
+const { MessageEmbed } = require("discord.js")
 const api = require("node-fetch")
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     let res = api("https://some-random-api.ml/img/cat")
         .then(res => res.json())
         .then(json => {
-          const embed = new Discord.MessageEmbed()
+          const embed = new MessageEmbed()
           .setTitle("Кот")
           .setColor(0x000000)
           .setImage(json.link)
