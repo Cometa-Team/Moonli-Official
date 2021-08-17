@@ -8,7 +8,7 @@ module.exports = {
 	async execute(client, message, args) {
         if(!args[0]) {
           let prefix = `${config.prefix}`
-          const user = client.commands.filter(c => c.category === "information").map(c => `${prefix}${c.name}`).join("\n") || 'Нет'
+          const information = client.commands.filter(c => c.category === "information").map(c => `${prefix}${c.name}`).join("\n") || 'Нет'
           //const admin = client.commands.filter(c => c.category === "admin").map(c => `${prefix}${c.name}`).join("\n") || 'Нет'
           const fun = client.commands.filter(c => c.category === "fun").map(c => `${prefix}${c.name}`).join("\n") || 'Нет'
           let embed = new MessageEmbed()
