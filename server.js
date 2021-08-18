@@ -48,9 +48,6 @@ const { MongoClient } = require('mongodb');
 const uri = "mongodb+srv://vynixh:vynix1@vynix.codop.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 client.mongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.database = client.mongo.db('Vynix')
-client.mongo.connect(err => {
-  const collection = client.mongo.db("Vynix").collection("VynixHelper");
-  // perform actions on the collection object
-});
+client.mongo.connect();
 
 client.login(client.config.token)
