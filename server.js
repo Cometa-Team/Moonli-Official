@@ -51,7 +51,6 @@ client.database = client.mongo.db('Vynix')
 client.mongo.connect(err => {
   const collection = client.mongo.db("Vynix").collection("VynixHelper");
   // perform actions on the collection object
-  client.mongo.close();
 });
 
 client.login(client.config.token)
