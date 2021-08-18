@@ -45,7 +45,7 @@ client.on('interactionCreate', async interaction => {
 
 
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://vynixh:vynixh1@vynix.51j3t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://vynixh:vynix1@vynix.codop.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 client.mongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.database = client.mongo.db('Vynix')
 client.mongo.connect(err => {
