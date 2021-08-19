@@ -10,7 +10,7 @@ module.exports = {
   aliases: ['exe', 'console', 'shell'],
   async execute(client, message, args) {
     let embed = new MessageEmbed()
-    .setTitle('Bash|Консоль)
+    .setTitle('Bash|Консоль')
     .setDescription('Жду ответа...')
     const msg = await message.channel.send(embeds: [embed])
     try {
