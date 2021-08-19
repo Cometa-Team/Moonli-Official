@@ -1,1 +1,1 @@
-worker: node server.js && eslint --fix
+worker: node server.js
