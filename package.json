@@ -13,9 +13,7 @@
     "discord.js": "^13.1.0",
     "mongodb": "^4.0.1",
     "pretty-ms": "^7.0.1",
-    "node-fetch": "2.6.1"
-  },
-  "devDependencies": {
+    "node-fetch": "2.6.1",
     "eslint": "^7.27.0",
     "nodemon": "^2.0.12"
   },
