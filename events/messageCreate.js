@@ -29,7 +29,7 @@ module.exports = {
       if (command.args && !args.length) {
         let reply = `Вы не правильно написали, ${message.author}!\n\n`;
         if (command.usage) {
-          reply += `Правильное использование команды: \`${guild.prefix}${command.name} ${command.usage}\``;
+          reply += `Правильное использование команды: \`${config.prefix}${command.name} ${command.usage}\``;
         }
         return message.channel.send({ content: reply });
       }
