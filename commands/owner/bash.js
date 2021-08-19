@@ -9,8 +9,10 @@ module.exports = {
   usage: '<команда в консоль>',
   aliases: ['exe', 'console', 'shell'],
   async execute(client, message, args) {
-    const msg = await message.channel.send(new MessageEmbed()
-    .setDescription('Жду ответа...'))
+    let embed = new MessageEmbed()
+    .setTitle('Bash|Консоль)
+    .setDescription('Жду ответа...')
+    const msg = await message.channel.send(embeds: [embed])
     try {
       let out = require('child_process').execSync(args.join(' ')).toString('utf8')
             msg.edit(`\`\`\`${out ? out : 'нет выхода.'}\`\`\``)
