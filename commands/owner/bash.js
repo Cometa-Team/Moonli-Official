@@ -12,7 +12,7 @@ module.exports = {
     let embed = new MessageEmbed()
     .setTitle('Bash|Консоль')
     .setDescription('Жду ответа...')
-    const msg = await message.channel.send(embeds: [embed])
+    const msg = await message.channel.send({ embeds: [embed] })
     try {
       let out = require('child_process').execSync(args.join(' ')).toString('utf8')
             msg.edit(`\`\`\`${out ? out : 'нет выхода.'}\`\`\``)
