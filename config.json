@@ -1,5 +1,6 @@
 {
   "prefix": "c.",
   "token": "ODY5MjAwODEyOTY5MTg1MzMw.YP6wVg.QwdqUNL8yFicgCw9NtmHo1ZQfCU",
-  "developers": ["852984192421199923", "663378999103324180"]
+  "developers": ["852984192421199923", "663378999103324180"],
+  "uri": "mongodb+srv://zerous:zerous2021@cluster0.codop.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }
