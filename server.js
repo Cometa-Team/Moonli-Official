@@ -52,12 +52,7 @@ for (const folder of commandFolders) {
 }
 
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://vynichelo:minicat2211@vynix.codop.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-client.mongo = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.mongo.connect(err => {
-  const collection = client.mongo.db("test").collection("devices");
-  // perform actions on the collection object
-  client.mongo.close();
-});
+client.mongo = new MongoClient(client.config.uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.mongo.connect();
 
 client.login(client.config.token)
