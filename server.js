@@ -14,7 +14,8 @@ const client = new Client({ intents: [
 	Intents.FLAGS.GUILD_MESSAGE_TYPING,
 	Intents.FLAGS.DIRECT_MESSAGES,
 	Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
-	Intents.FLAGS.DIRECT_MESSAGE_TYPING]
+	Intents.FLAGS.DIRECT_MESSAGE_TYPING
+]
 });
 const fs = require('fs');
 client.config = require('./config.json');
