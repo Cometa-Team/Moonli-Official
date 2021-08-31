@@ -14,7 +14,8 @@ const client = new Client({ intents: [
 	Intents.FLAGS.GUILD_MESSAGE_TYPING,
 	Intents.FLAGS.DIRECT_MESSAGES,
 	Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
-	Intents.FLAGS.DIRECT_MESSAGE_TYPING]
+	Intents.FLAGS.DIRECT_MESSAGE_TYPING
+]
 });
 const fs = require('fs');
 client.config = require('./config.json');
@@ -56,6 +57,6 @@ client.mongo = new MongoClient(client.config.uri, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true 
 });
-client.mongo.connect();
+await client.mongo.connect();
 
 client.login(client.config.token)
