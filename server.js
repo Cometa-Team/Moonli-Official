@@ -57,7 +57,7 @@ client.mongo = new MongoClient(client.config.uri, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true 
 });
-function async main() {
+async function main() {
 	await client.mongo.connect();
 }
 client.login(client.config.token)
