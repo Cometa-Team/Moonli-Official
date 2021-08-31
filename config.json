@@ -1,6 +1,6 @@
 {
   "prefix": "c.",
-  "token": "ODY5MjAwODEyOTY5MTg1MzMw.YP6wVg.QwdqUNL8yFicgCw9NtmHo1ZQfCU",
-  "developers": ["852984192421199923", "663378999103324180"],
-  "uri": "mongodb+srv://zerous:zerous2021@cluster0.codop.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  "token": "ODc5MDY2NjYwMDY0MDY3NjI2.YSKUoA.VWwPa8MZ9W_9f7B3X5_3Tlm2aP8",
+  "developers": ["852984192421199923"],
+  "uri": "mongodb+srv://ceno-bot:ceno-bot_21_21@cluster0.ggmos.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }

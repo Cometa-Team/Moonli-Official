@@ -52,7 +52,10 @@ for (const folder of commandFolders) {
 }
 
 const { MongoClient } = require('mongodb');
-client.mongo = new MongoClient(client.config.uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.mongo = new MongoClient(client.config.uri, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true 
+});
 client.mongo.connect();
 
 client.login(client.config.token)
