@@ -18,6 +18,8 @@ const client = new Client({ intents: [
 ]
 });
 const fs = require('fs');
+global.mongoose = require('mongoose')
+
 client.config = require('./config.json');
 client.commands = new Collection();
 client.cooldowns = new Collection();
@@ -52,15 +54,9 @@ for (const folder of commandFolders) {
 	}
 }
 
-const { MongoClient } = require('mongodb');
-client.mongo = new MongoClient(client.config.uri, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true 
-});
-async function main() {
-	await client.mongo.connect();
-	console.log("Успешно подключена!")
-}
-main();
+mongoose.connect(client.config.uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.on('connected',()=>{
+  console.log('[✅ DataBase] Connected!')
+})
 
 client.login(client.config.token)
