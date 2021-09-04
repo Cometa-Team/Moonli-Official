@@ -4,6 +4,7 @@ const schema = mongoose.Schema({
     
     bitcoin: { type: Number, default: 0 },
     donbitcoin: { type: Number, default: 0 },
+    premium: { type: String, default: "нет" },
     level: { type: Number, default: 0 },
     xp: { type: Number, default: 0 },
     messages: { type: Number, default: 0 },
