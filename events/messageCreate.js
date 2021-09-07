@@ -1,8 +1,8 @@
 const config = require("../config.json");
 const configdev = config.developers;
 const { Collection, MessageEmbed } = require('discord.js');
-global.Guild = require("./db/Guilds.js");
-global.User = require('./db/Users.js');
+global.Guild = require("./../db/Guilds.js");
+global.User = require('./../db/Users.js');
 
 module.exports = {
 	name: 'messageCreate',
