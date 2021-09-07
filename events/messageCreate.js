@@ -8,8 +8,19 @@ module.exports = {
 	name: 'messageCreate',
 	once: false,
 	async execute(message, client) {
-	    
-	    if(message.author.bot) return;
+      
+      client.nodb = (user) => message.channel.send(new Discord.MessageEmbed().setColor('RED').setDescription(`К сожелению **${user.tag}** нету в базе-данных.`));
+
+      let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
+      let guild = await Guild.findOne({ guildID: message.guild.id });
+      if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id }); }
+      if(!guild) { Guild.create({ guildID: message.guild.id }); }   
+
+      user.bitcoin++;
+      user.messages++;
+
+      user.save();
+      if(message.author.bot) return;
 	    
       let cooldowns = client.cooldowns;
       if (!message.content.startsWith(config.prefix)) return;
