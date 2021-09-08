@@ -8,13 +8,13 @@ module.exports = {
         let embed = new MessageEmbed()
         .setTitle("Информация о пользователе")
         .setColor(0x00ff09)
-        .setDescription(`Имя: message.author.username
-Айди: message.author.id
-Тег: message.author.discriminator
-Биткойны: user.bitcoin
-Дон. Биткойны: user.donbitcoin
-Премиум: user.premium
-Сообщения: user.messages
+        .setDescription(`Имя: ${message.author.username}
+Айди: ${message.author.id}
+Тег: ${message.author.discriminator}
+Биткойны: ${user.bitcoin}
+Дон. Биткойны: ${user.donbitcoin}
+Премиум: ${user.premium}
+Сообщения: ${user.messages}
 `)
         message.reply({ embeds: [embed] });
     }
