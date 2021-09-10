@@ -59,4 +59,9 @@ mongoose.connection.on('connected',()=>{
   console.log('[✅ DataBase] Connected!')
 })
 
+client.on('interactionCreate', interaction => {
+	if (!interaction.isButton()) return;
+	console.log(interaction);
+});
+
 client.login(client.config.token)
