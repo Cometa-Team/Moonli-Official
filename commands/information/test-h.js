@@ -4,6 +4,9 @@ module.exports = {
     name: "t-h",
     description: "Посмотреть свой или чжой профиль",
     async execute(client, message, args) {
+
+        const filter = i => i.customId === 'primary' && i.user.id === '122157285790187530';
+        const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
         const wait = require('util').promisify(setTimeout);
 
         collector.on('collect', async i => {
