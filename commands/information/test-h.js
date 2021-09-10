@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "user",
+    name: "t-h",
     description: "Посмотреть свой или чжой профиль",
     async execute(client, message, args) {
         const wait = require('util').promisify(setTimeout);
