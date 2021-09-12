@@ -63,7 +63,7 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { token } = require('./config.json');
 
-const commands = [];
+const commands = [ ping ];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 // Place your client and guild ids here
@@ -91,13 +91,5 @@ const rest = new REST({ version: '9' }).setToken(token);
 		console.error(error);
 	}
 })();
-
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
-
-	if (interaction.commandName === 'ping') {
-		await interaction.reply({ content: 'Pong!', ephemeral: true });
-	}
-});
 
 client.login(client.config.token)
