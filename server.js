@@ -92,4 +92,12 @@ const rest = new REST({ version: '9' }).setToken(token);
 	}
 })();
 
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	if (interaction.commandName === 'ping') {
+		await interaction.reply({ content: 'Pong!', ephemeral: true });
+	}
+});
+
 client.login(client.config.token)
