@@ -33,6 +33,7 @@ module.exports = {
 			  .setLabel('Primary')
 			  .setStyle('PRIMARY'),
 	                  );
+            message.channel.send({ content: 'Pong!', components: [row] })
         }
     }
 }
