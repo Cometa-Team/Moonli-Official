@@ -25,6 +25,14 @@ module.exports = {
 			   ]),
 			 );
           message.channel.send({ content: 'Pong!', components: [row] })
+        } else {
+            const row = new MessageActionRow()
+	    .addComponents(
+			  new MessageButton()
+		          .setCustomId('primary')
+			  .setLabel('Primary')
+			  .setStyle('PRIMARY'),
+	                  );
         }
     }
 }
