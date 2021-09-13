@@ -10,7 +10,7 @@ module.exports = {
         .then(json => {
           const embed = new MessageEmbed()
           .setTitle("Панда")
-          .setColor(0x000000)
+          .setColor(0x311432)
           .setImage(json.link)
           .setTimestamp()
           message.channel.send({ embeds: [embed] })
