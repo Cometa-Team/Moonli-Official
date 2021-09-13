@@ -1,5 +1,6 @@
 const { Client, Intents, Collection } = require('discord.js');
-const client = new Client({ intents: [
+const client = new Client({ 
+        intents: [
 	Intents.FLAGS.GUILDS,
 	Intents.FLAGS.GUILD_MEMBERS,
 	Intents.FLAGS.GUILD_BANS,
@@ -15,7 +16,8 @@ const client = new Client({ intents: [
 	Intents.FLAGS.DIRECT_MESSAGES,
 	Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
 	Intents.FLAGS.DIRECT_MESSAGE_TYPING
-]
+],
+        allowedMentions: { parse: ['users', 'roles'], repliedUser: false }
 });
 const fs = require('fs');
 global.mongoose = require('mongoose')
