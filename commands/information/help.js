@@ -13,7 +13,7 @@ module.exports = {
           const fun = client.commands.filter(c => c.category === "fun").map(c => `${prefix}${c.name}`).join("\n") || 'Нет'
           let embed = new MessageEmbed()
           .setTitle(`Команды`)
-          .setColor(0x0000FF)
+          .setColor(client.color)
           .setDescription(`Узнать информацию о команде: ${prefix}help <команда>(Команду без <> указывать!)
 Команды для участников:
 ${information}
