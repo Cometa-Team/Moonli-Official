@@ -11,6 +11,7 @@ module.exports = {
   async execute(client, message, args) {
     let embed = new MessageEmbed()
     .setTitle('Bash|Консоль')
+    .setColor(client.color)
     .setDescription('Жду ответа...')
     const msg = await message.channel.send({ embeds: [embed] })
     try {
