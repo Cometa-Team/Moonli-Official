@@ -16,12 +16,11 @@ module.exports = {
       if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id }); }
       if(!guild) { Guild.create({ guildID: message.guild.id }); }   
 
-      user.save();
       if(message.author.bot) return;
 	    
       let cooldowns = client.cooldowns;
-      if (!message.content.startsWith(config.prefix)) return;
-      const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+      if (!message.content.startsWith(guild.prefix)) return;
+      const args = message.content.slice(guild.prefix.length).trim().split(/ +/g);
       const commandName = args.shift().toLowerCase();
       const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
       if (!command) return;
