@@ -11,7 +11,7 @@ module.exports = {
         .then(json => {
           const embed = new MessageEmbed()
           .setTitle("Кот")
-          .setColor(0x311432)
+          .setColor(client.color)
           .setImage(json.link)
           .setTimestamp()
           message.channel.send({ embeds: [embed] })
