@@ -16,9 +16,6 @@ module.exports = {
       if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id }); }
       if(!guild) { Guild.create({ guildID: message.guild.id }); }   
 
-      user.bitcoin++;
-      user.messages++;
-
       user.save();
       if(message.author.bot) return;
 	    
