@@ -32,7 +32,7 @@ module.exports = {
       	  const tyype = eevaled[0].toUpperCase() + eevaled.slice(1)
       	  let embed = new Discord.MessageEmbed()
       	  .setTitle(`Eval`)
-          .setColor(0x0000FF)
+          .setColor(client.color)
           .setDescription(`**Успешно**
           **Тип:** \`${tyyype[tyype]}\`
           **Готово за:** \`${new Date().getTime() - message.createdTimestamp + 'ms'}\`
