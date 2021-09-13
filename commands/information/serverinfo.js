@@ -9,7 +9,7 @@ module.exports = {
         let news = message.guild.publicUpdatesChannelId || 'Нету'
         let embed = new MessageEmbed()
         .setTitle("Информация о сервере")
-        .setColor(0x311432)
+        .setColor(client.color)
         .setDescription(`👑Овнер: ${message.guild.ownerId}
 🆔Айди: ${message.guild.id}
 🚅Название: ${message.guild.name}
