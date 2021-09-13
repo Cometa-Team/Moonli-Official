@@ -25,7 +25,7 @@ ${fun}`)
           if(!cmd) return message.reply({ content: "Команда не найдена!" })
           let helpcmd = new Discord.MessageEmbed()
           .setTitle(`Информация о команде ${args[0]}`)
-          .setColor(0x0000ff)
+          .setColor(0x311432)
           .setDescription(`Название: ${cmd.name},
 Описание: ${cmd.description || 'Нет'},
 Алиасы: ${cmd.aliases || 'Нет'},
