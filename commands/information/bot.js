@@ -13,7 +13,7 @@ module.exports = {
     let adm = client.users.cache.get("852984192421199923")
     let user = message.author;
       let bot = new Discord.MessageEmbed()
-      .setColor(0x311432)
+      .setColor(client.color)
       .setTitle(`Версия бота: ${version}`)
       .setDescription(`Автор бота: ${author} \nЕго тег ${adm.tag}`)
       .addField('Бот в сети:', `${ms(client.uptime)}`,true)
