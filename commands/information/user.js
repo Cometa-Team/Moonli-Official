@@ -7,7 +7,7 @@ module.exports = {
         let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
         let embed = new MessageEmbed()
         .setTitle("Информация о пользователе")
-        .setColor(0x00ff09)
+        .setColor(0x311432)
         .setDescription(`Имя: ${message.author.username}
 Айди: ${message.author.id}
 Тег: ${message.author.discriminator}
