@@ -26,7 +26,7 @@ module.exports = {
 Премиум: ${user.premium}
 Сообщения: ${user.messages}
 Аккаунт создан: **${strftime('%d.%m.%Y в %H:%M', new Date(argsUser.createdTimestamp))}\n(${diff1} дн. назад)**
-Присоеденился к серверу: **${strftime('%d.%m.%Y в %H:%M', new Date(message.guild.member(argsUser).joinedTimestamp))}\n(${diff2} дн. назад)**`)
+Присоеденился к серверу: **${strftime('%d.%m.%Y в %H:%M', new Date(message.guild.member(argsUser).joinedTimestamp))}\n(${diff2} дн. назад)**
 `)
         .setThumbnail(argsUser.displayAvatarURL())
         message.reply({ embeds: [embed] });
