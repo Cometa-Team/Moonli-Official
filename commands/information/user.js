@@ -19,9 +19,8 @@ module.exports = {
         let embed = new MessageEmbed()
         .setTitle("Информация о пользователе")
         .setColor(client.color)
-        .setDescription(`Имя: ${message.author.username}
-Айди: ${message.author.id}
-Тег: ${message.author.discriminator}
+        .setDescription(`Имя: ${argsUser.username}
+Айди: ${argsUser.id}
 Биткойны: ${user.bitcoin}
 Дон. Биткойны: ${user.donbitcoin}
 Премиум: ${user.premium}
