@@ -5,6 +5,7 @@ module.exports = {
     description: "Посмотреть свой или чужой профиль",
     category: "information",
     async execute(client, message, args) {
+        let member = message.guild.member(message.mentions.users.first() || message.guild.member(args[0]));
         let argsUser
         if (member) argsUser = member.user
         else argsUser = message.author
