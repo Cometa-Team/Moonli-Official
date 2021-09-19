@@ -2,7 +2,6 @@ const { MessageEmbed } = require("discord.js")
 
 module.exports = {
   name: "addbot",
-  aliases: "add",
   description: "",
   category: "addbot",
   async execute(client, message, args) {
@@ -15,7 +14,7 @@ module.exports = {
     .setTitle("Proverka")
     .setDescription("")
     .setTimestamp()
-  let msg = await client.channels.cache.get('889176984427589722').send({ embeds: [bots] })
+  let msg = await client.channels.cache.get('889176984427589722').send({ embeds: [bots] }).then(async (msg) => {
   await msg.react(":white_check_mark:")
   await msg.react("<:add_info:889070526121771008>")
   await msg.react("<:not_accepted:889070410216407040>")
@@ -31,8 +30,8 @@ module.exports = {
         
       }
       if (reaction._emoji.name === "<:not_accepted:889070410216407040>") {
-        
       }
     })
+  })
   }
 }
