@@ -20,7 +20,7 @@ const client = new Client({
         allowedMentions: { parse: ['users', 'roles'], repliedUser: false }
 });
 const fs = require('fs');
-global.mongoose = require('mongoose')
+const { MongoClient } = require("mongodb");
 
 client.config = require('./config.json');
 client.commands = new Collection();
@@ -57,10 +57,12 @@ for (const folder of commandFolders) {
 	}
 }
 
-mongoose.connect(client.config.uri, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connection.on('connected',()=>{
-  console.log('[✅ DataBase] Connected!')
-})
+client.mongo = new MongoClient(clien, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+client.database = client.mongo.db('Moonli');
+client.mongo.connect()
 
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
