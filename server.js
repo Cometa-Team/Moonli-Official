@@ -57,7 +57,7 @@ for (const folder of commandFolders) {
 	}
 }
 
-client.mongo = new MongoClient(clien, {
+client.mongo = new MongoClient(client.config.uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
