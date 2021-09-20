@@ -1,21 +1,12 @@
 const config = require("../config.json");
 const configdev = config.developers;
 const { Collection, MessageEmbed } = require('discord.js');
-global.Guild = require("./../db/Guilds.js");
-global.User = require('./../db/Users.js');
 
 module.exports = {
 	name: 'messageCreate',
 	once: false,
 	async execute(message, client) {
       
-      client.nodb = (user) => message.channel.send(new Discord.MessageEmbed().setColor('RED').setDescription(`К сожелению **${user.tag}** нету в базе-данных.`));
-
-      let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
-      let guild = await Guild.findOne({ guildID: message.guild.id });
-      if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id }); }
-      if(!guild) { Guild.create({ guildID: message.guild.id }); }   
-
       if(message.author.bot) return;
 	    
       let cooldowns = client.cooldowns;
