@@ -5,7 +5,6 @@ const config = require('../../config.json')
 module.exports = {
 	name: 'help',
 	description: 'Команды бота',
-        debug: false,
 	async execute(client, message, args) {
         if(!args[0]) {
           let prefix = `${config.prefix}`
