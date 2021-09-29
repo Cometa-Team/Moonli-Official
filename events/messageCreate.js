@@ -35,11 +35,11 @@ module.exports = {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
         return message.react('❌');
       }
-      if(!command.debug == true) {
-        console.log(`${message.author.id} пытался ввести команду, которая в дебаге`)
-        message.channel.send(`Релиз в 3 версии бота`)
-        return message.react('❌');
-      }
+      //if(!command.debug == true) {
+        //console.log(`${message.author.id} пытался ввести команду, которая в дебаге`)
+        //message.channel.send(`Релиз в 3 версии бота`)
+        //return message.react('❌');
+      //}
       if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Collection());
       }
