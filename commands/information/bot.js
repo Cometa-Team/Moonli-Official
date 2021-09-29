@@ -17,7 +17,7 @@ module.exports = {
       .setTitle(`Версия бота: ${version}`)
       .setDescription(`Автор бота: ${author} \nЕго тег ${adm.tag}`)
       .addField('Бот в сети:', `${ms(client.uptime)}`,true)
-      .addField('Нагрузка на бота:', `${(process.memoryUsage().rss / 1024 / 1024).toFixed(2)} MB RSS\n ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB Heap`,true)
+      .addField('Нагрузка на бота:', `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,true)
       .addField('Пинг:', `${client.ws.ping} ms`,true)
       .addField('Всего гильдий:', `${client.guilds.cache.size}`,true)
       .addField('Всего юзеров:', `${client.users.cache.size}`,true)
