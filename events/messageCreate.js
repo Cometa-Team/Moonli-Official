@@ -40,6 +40,7 @@ module.exports = {
         let debug = MessageEmbed()
         .setTitle(`Debug`)
         .setDescription(`Релиз бота Soon...`)
+        message.channel.send({ embeds: [debug] })
         //return message.react('❌');
       }
       if (!cooldowns.has(command.name)) {
