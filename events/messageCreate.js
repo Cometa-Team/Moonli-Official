@@ -35,13 +35,13 @@ module.exports = {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
         return message.react('❌');
       }
+      let debug = new MessageEmbed()
+      .setTitle(`Debug`)
+      .setDescription(`Релиз бота Soon...`)
       if(!command.debug == true) {
         console.log(`${message.author.id} пытался ввести команду, которая в дебаге`)
-        let debug = new MessageEmbed()
-        .setTitle(`Debug`)
-        .setDescription(`Релиз бота Soon...`)
         message.channel.send({ embeds: [debug] })
-        //return message.react('❌');
+        return message.react('❌');
       }
       if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Collection());
