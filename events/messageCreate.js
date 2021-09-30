@@ -37,7 +37,9 @@ module.exports = {
       }
       if(!command.debug == true) {
         console.log(`${message.author.id} пытался ввести команду, которая в дебаге`)
-        message.channel.send(`Релиз в 3 версии бота`)
+        let debug = MessageEmbed()
+        .setTitle(`Debug`)
+        .setDescription(`Релиз бота Soon...`)
         //return message.react('❌');
       }
       if (!cooldowns.has(command.name)) {
