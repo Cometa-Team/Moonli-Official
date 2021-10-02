@@ -1,3 +1,5 @@
+const MessageEmbed = require("discord.js")
+
 module.exports = {
   name: "user",
   description: "",
@@ -5,7 +7,7 @@ module.exports = {
 
     let user = message.mentions.users.first() || message.author
 
-    let userm = new Discord.MessageEmbed()
+    let userm = new MessageEmbed()
       .setTitle("**Userinfo**")
       .setColor(client.color)
       .setThumbnail(user.avatarURL())
