@@ -3,7 +3,7 @@ module.exports = {
 	once: true,
 	async execute(client) {
 	  console.log(`Ready ${client.user.username}`);
-	  const statuses = [`${client.guilds.cache.size}`, ``]
+	  const statuses = [`${client.guilds.cache.size}servers, ${client.users.cache.size}users`, ``]
 	  const types = ["WATCHING", "LISTENING"]
 	  
 	  const rnd = statuses[Math.floor(Math.random() * statuses.length)]

@@ -45,12 +45,12 @@ for (const file of eventFiles) {
 	}
 }
 
-const commandFolders = fs.readdirSync('./commands');
+const commandFolders = fs.readdirSync('./commands-f');
 
 for (const folder of commandFolders) {
-	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+	const commandFiles = fs.readdirSync(`./commands-f/${folder}`).filter(file => file.endsWith('.js'));
 	for (const file of commandFiles) {
-		const command = require(`./commands/${folder}/${file}`);
+		const command = require(`./commands-f/${folder}/${file}`);
 		client.commands.set(command.name, command);
 		console.log(`${folder} Загружено, ${file} Загружено!`)
 	}
