@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,8 +16,7 @@
     "node-fetch": "2.6.1",
     "eslint": "^7.27.0",
     "nodemon": "^2.0.12",
-    "discord-api-types": "^0.23.1",
-    "@discordjs/rest": "0.1.0-canary.0"
+    "simply-djs": "2.0.96"
   },
   "engines": {
     "node": "16.6.0",
