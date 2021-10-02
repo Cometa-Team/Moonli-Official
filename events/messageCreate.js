@@ -37,7 +37,7 @@ module.exports = {
       }
       let debug = new MessageEmbed()
       .setTitle(`Debug`)
-      .setDescription(`Releases No!`)
+      .setDescription(`Releases 1.0!`)
       if(!command.debug == true) {
         console.log(`${message.author.id} пытался ввести команду, которая в дебаге`)
         message.channel.send({ embeds: [debug] })
