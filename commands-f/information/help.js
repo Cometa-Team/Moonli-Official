@@ -3,20 +3,20 @@ const Discord = require("discord.js")
 
 module.exports = {
   name: "help",
-  aliases: [""],
+  aliases: ["h"],
   description: "all commands of bot",
 
 
   run: async (client, message, args) => {
     let embed = new Discord.MessageEmbed()
-      .setTitle('****')
-      .setDescription('****')
-      .addField("****")
+      .setTitle('**Test**')
+      .setDescription('**Test**')
+      .addField("**Test**")
 
     let embed2 = new Discord.MessageEmbed()
-      .setTitle('****')
-      .setDescription('****')
-      .addField("****")
+      .setTitle('**Test**')
+      .setDescription('**Test**')
+      .addField("**Test**")
 
     let pages = [embed, embed2] // REQUIRED
 
@@ -24,11 +24,11 @@ module.exports = {
     // let pages = ['page1', 'page2', 'page3']
 
     simplydjs.embedPages(client, message, pages, {
-      firstEmoji: '876616705164595280', // default: ⏪
-      backEmoji: '876605402291265576', // default: ◀️
-      delEmoji: '876627238903246889', // default: 🗑️
-      forwardEmoji: '876616590563614781', // default: ▶️
-      lastEmoji: '876616351572168765', // default: ⏩
+      firstEmoji: '', // default: ⏪
+      backEmoji: '', // default: ◀️
+      delEmoji: '', // default: 🗑️
+      forwardEmoji: '', // default: ▶️
+      lastEmoji: '', // default: ⏩
 
       btncolor: 'grey', // default: green 
       delcolor: 'red', // default: red
