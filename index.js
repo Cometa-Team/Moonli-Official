@@ -20,13 +20,14 @@ const client = new Client({
   allowedMentions: { parse: ['users', 'roles'], repliedUser: false }
 });
 const fs = require('fs');
+global.mongoose = require('mongoose')
 
 client.config = require('./config.json');
 client.commands = new Collection();
 client.cooldowns = new Collection();
 client.emotes = require("./data/emojis.json");
 client.color = 0x311432
-//client.shards = new ShardingManager("./shards.js");
+//client.shards = new ShardingManager("./shards.js"); //shards
 client.aliases = new Collection();
 
 const eventFiles = fs.readdirSync('./events-f').filter(file => file.endsWith('.js'));
@@ -50,5 +51,10 @@ for (const folder of commandFolders) {
 		console.log(`${folder} Загружено, ${file} Загружено!`)
 	}
 }
+
+mongoose.connect(client.config.uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.on('connected', () => {
+  console.log('[✅ DataBase] Connected!')
+})
 
 client.login(client.config.token)

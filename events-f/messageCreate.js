@@ -1,6 +1,8 @@
 const config = require("../config.json");
 const configdev = config.developers;
 const { Collection, MessageEmbed } = require('discord.js');
+//global.Guilds = require("./mongoose-schema/guilds.js");
+//global.Users = require("./mongoose-schema/users.js");
 
 module.exports = {
 	name: 'messageCreate',
@@ -31,6 +33,12 @@ module.exports = {
         }
         return message.channel.send({ content: reply });
       }
+      //client.nodb = (user) => message.channel.send(new Discord.MessageEmbed().setColor('RED').setDescription(`К сожелению **${user.tag}** нету в базе-данных.`));
+
+      //let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
+      //let guild = await Guild.findOne({ guildID: message.guild.id });
+      //if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id }); send(`\`[✅ DataBase]\` **${message.author.username}** Успешно был(а) добавлен в базу-данных`) }
+      //if(!guild) { Guild.create({ guildID: message.guild.id }); send(`\`[✅ DataBase]\` **${message.guild.name}** Успешно была добавлена в базу-данных`); }   
       if(!configdev.includes(message.author.id) && command.admin == true) {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
         return message.react('❌');
