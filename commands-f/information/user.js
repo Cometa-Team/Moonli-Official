@@ -11,7 +11,7 @@ module.exports = {
     .setTitle("**Userinfo**")
     .setColor(client.color)
     .setThumbnail(user.user.avatar())
-    .setDescription(`**Username**: ${user.user.username}\n**Tag**: #${user.user.discriminator}\n**Id**: ${user.id}\n**Status**: ${user.presence.status}\n**Bot**: ${user.user.bot}\n**createdAt**: ${user.user.createdAt}`)
+    .setDescription(`**Username**: ${user.user.username}\n**Tag**: #${user.user.discriminator}\n**Id**: ${user.user.id}\n**Status**: ${user.presence.status}\n**Bot**: ${user.user.bot}\n**createdAt**: ${user.user.createdAt}`)
     .setTimestamp()
 
     message.channel.send({ embeds: [userm] });
