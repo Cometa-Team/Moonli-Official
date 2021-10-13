@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js")
 module.exports = {
   name: "user",
   description: "",
+  debugcmd: false,
   async execute(client, message, args) {
 
     let user = message.mentions.users.first() || message.member

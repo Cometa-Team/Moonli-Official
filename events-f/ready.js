@@ -12,11 +12,5 @@ module.exports = {
 	  setInterval(() => {
 	    client.user.setActivity(rnd, {type: rnd2})
 	  }, 15000)
-	  client.application.commands.create({
-	    name: 'ping',
-	    description: 'ping',
-    })
-    .then(console.log)
-    .catch(console.error);
 	},
 };

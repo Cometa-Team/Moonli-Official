@@ -43,6 +43,14 @@ module.exports = {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
         return message.react('❌');
       }
+      let debug = new MessageEmbed()
+        .setTitle(`Debug`)
+        .setDescription(`Command is off!`)
+      if (!command.debugcmd == true) {
+        console.log(`${message.author.id} пытался ввести команду, которая в дебаге`)
+        message.channel.send({ embeds: [debug] })
+        return message.react('❌');
+      }
       if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Collection());
       }
