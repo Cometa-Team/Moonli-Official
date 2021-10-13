@@ -41,12 +41,13 @@ module.exports = {
       //if(!guild) { Guild.create({ guildID: message.guild.id }); send(`\`[✅ DataBase]\` **${message.guild.name}** Успешно была добавлена в базу-данных`); }   
       if(!configdev.includes(message.author.id) && command.admin == true) {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
-        return message.react('❌');
+        return message.react('❌')
+        .catch()
       }
       let debug = new MessageEmbed()
         .setTitle(`Debug`)
         .setDescription(`Command is off!`)
-      if (!command.debugcmd == true) {
+      if (command.debugcmd == true) {
         console.log(`${message.author.id} пытался ввести команду, которая в дебаге`)
         message.channel.send({ embeds: [debug] })
         return message.react('❌');
