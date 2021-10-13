@@ -5,7 +5,7 @@ module.exports = {
   name: "help",
   aliases: ["h"],
   description: "all commands of bot",
-  debugcmd: true,
+  admin: true,
   async execute(client, message, args) {
     let embed = new Discord.MessageEmbed()
       .setTitle('**Test**')
