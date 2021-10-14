@@ -12,11 +12,13 @@ module.exports = {
       if(message.author.bot) return;
 	    
       let cooldowns = client.cooldowns;
-      if (!message.content.startsWith(client.config.prefix)) return;
-      const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
-      const commandName = args.shift().toLowerCase();
-      const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
-      if (!command) return;
+      if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) {
+        if (!message.content.startsWith(client.config.prefix)) return;
+        const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+        const commandName = args.shift().toLowerCase();
+        const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
+        if (!command) return;
+      }
       //if(message.channel.type === 'dm') {
         //return newGuildHook1.send(
           //new Discord.MessageEmbed()
@@ -33,12 +35,6 @@ module.exports = {
         }
         return message.channel.send({ content: reply });
       }
-      //client.nodb = (user) => message.channel.send(new Discord.MessageEmbed().setColor('RED').setDescription(`К сожелению **${user.tag}** нету в базе-данных.`));
-
-      //let user = await User.findOne({ guildID: message.guild.id, userID: message.author.id });
-      //let guild = await Guild.findOne({ guildID: message.guild.id });
-      //if(!user) { User.create({ guildID: message.guild.id, userID: message.author.id }); send(`\`[✅ DataBase]\` **${message.author.username}** Успешно был(а) добавлен в базу-данных`) }
-      //if(!guild) { Guild.create({ guildID: message.guild.id }); send(`\`[✅ DataBase]\` **${message.guild.name}** Успешно была добавлена в базу-данных`); }   
       if(!configdev.includes(message.author.id) && command.admin == true) {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
         if(!message.member.guild.me.permissions.has(Permissions.FLAGS.ADD_REACTIONS)) {
