@@ -1,6 +1,6 @@
 const config = require("../config.json");
 const configdev = config.developers;
-const { Collection, MessageEmbed } = require('discord.js');
+const { Permissions, Collection, MessageEmbed } = require('discord.js');
 //global.Guilds = require("./mongoose-schema/guilds.js");
 //global.Users = require("./mongoose-schema/users.js");
 
@@ -41,7 +41,16 @@ module.exports = {
       //if(!guild) { Guild.create({ guildID: message.guild.id }); send(`\`[✅ DataBase]\` **${message.guild.name}** Успешно была добавлена в базу-данных`); }   
       if(!configdev.includes(message.author.id) && command.admin == true) {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
-        return message.react('❌').catch(null)
+        if(!message.member.guild.me.permissions.has(Permissions.FLAGS.ADD_REACTIONS)) {
+          return message.react('❌')
+        } else {
+          return
+        }
+        if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) {
+          return message.reply({ content: 'Admin cmd' })
+        } else {
+          return
+        }
       }
       if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Collection());
