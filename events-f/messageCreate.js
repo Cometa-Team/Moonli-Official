@@ -12,7 +12,7 @@ module.exports = {
       if(message.author.bot) return;
 	    
       let cooldowns = client.cooldowns;
-      if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) {
+      //if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) {
         if (!message.content.startsWith(client.config.prefix)) return;
         const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
         const commandName = args.shift().toLowerCase();
@@ -72,6 +72,6 @@ module.exports = {
         .setColor(client.colors.error))
         console.log('Ошибка у бота!');
       }
-   }
+   //}
   }
 }
