@@ -42,9 +42,9 @@ module.exports = {
           return
         }
         if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) {
-          return message.reply({ content: 'Admin cmd' })
-        } else {
           return
+          } else {
+            return message.reply({ content: 'Admin cmd' })
         }
       }
       if (!cooldowns.has(command.name)) {
