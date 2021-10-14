@@ -18,7 +18,6 @@ module.exports = {
         const commandName = args.shift().toLowerCase();
         const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
         if (!command) return;
-      }
       //if(message.channel.type === 'dm') {
         //return newGuildHook1.send(
           //new Discord.MessageEmbed()
@@ -73,5 +72,6 @@ module.exports = {
         .setColor(client.colors.error))
         console.log('Ошибка у бота!');
       }
+   }
   }
 }
