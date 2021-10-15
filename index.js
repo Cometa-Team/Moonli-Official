@@ -52,9 +52,4 @@ for (const folder of commandFolders) {
 	}
 }
 
-mongoose.connect(client.config.uri, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connection.on('connected', () => {
-  console.log('[✅ DataBase] Connected!')
-})
-
 client.login(client.config.token)
