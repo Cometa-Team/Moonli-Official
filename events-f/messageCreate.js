@@ -12,7 +12,7 @@ module.exports = {
       if(message.author.bot) return;
 	    
       let cooldowns = client.cooldowns;
-      //if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) {
+      if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return
         if (!message.content.startsWith(client.config.prefix)) return;
         const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
         const commandName = args.shift().toLowerCase();
@@ -36,16 +36,11 @@ module.exports = {
       }
       if(!configdev.includes(message.author.id) && command.admin == true) {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
-        if(!message.member.guild.me.permissions.has(Permissions.FLAGS.ADD_REACTIONS)) {
-          return message.react('❌')
-        } else {
-          return
-        }
-        if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) {
-          return
-          } else {
-            return message.reply({ content: 'Admin cmd' })
-        }
+        if(!message.member.guild.me.permissions.has(Permissions.FLAGS.ADD_REACTIONS)) return
+        if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return
+        
+        return message.react('❌')
+        return message.reply({ content: 'Admin cmd' })
       }
       if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Collection());
@@ -72,6 +67,5 @@ module.exports = {
         .setColor(client.colors.error))
         console.log('Ошибка у бота!');
       }
-   //}
   }
 }
