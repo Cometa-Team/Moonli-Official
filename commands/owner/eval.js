@@ -7,6 +7,7 @@ module.exports = {
     admin: true,
     usage: '<команда>',
     aliases: ['ebal', 'e'],
+    category: "owner",
     async execute(client, message, args) {
       	const database = `Eval {
       	id: ${message.author.id},

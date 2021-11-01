@@ -1,6 +1,7 @@
 const config = require("../config.json");
 const configdev = config.developers;
-const { Collection, MessageEmbed } = require('discord.js');
+const { Permissions, Collection, MessageEmbed } = require('discord.js');
+const fs = require("fs")
 
 module.exports = {
 	name: 'messageCreate',
@@ -8,13 +9,33 @@ module.exports = {
 	async execute(message, client) {
       
       if(message.author.bot) return;
-	    
+	    if(message.author) {
+      var msg = message
+      let user = msg.mentions.users.first() || msg.author;
+      let udb = require("../db/udb.json");
+      let userdb = udb[user.id]
+if(!userdb) {
+        if(message.author.bot) return
+        let userdbc = JSON.parse(fs.readFileSync("./db/udb.json", "utf8"));
+        if(!userdbc[user.id]) {
+          userdbc[user.id] = {
+            level: 0,
+  			    money: 0,
+            premium: 0
+  		    };
+      fs.writeFile("./db/udb.json", JSON.stringify(userdbc), (err) => {
+          if (err) console.log(err)
+		  })
+        };
+}
+      }     
       let cooldowns = client.cooldowns;
-      if (!message.content.startsWith(client.config.prefix)) return;
-      const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
-      const commandName = args.shift().toLowerCase();
-      const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
-      if (!command) return;
+      if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return
+        if (!message.content.startsWith(client.config.prefix)) return;
+        const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+        const commandName = args.shift().toLowerCase();
+        const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
+        if (!command) return;
       //if(message.channel.type === 'dm') {
         //return newGuildHook1.send(
           //new Discord.MessageEmbed()
@@ -33,17 +54,13 @@ module.exports = {
       }
       if(!configdev.includes(message.author.id) && command.admin == true) {
         console.log(`${message.author.tag} пытался использовать admin команду!`);
-        return message.react('❌');
+        if(!message.member.guild.me.permissions.has(Permissions.FLAGS.ADD_REACTIONS)) return
+        if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return
+        
+        return message.react('❌')
+        return message.reply({ content: 'Admin cmd' })
       }
-      let debug = new MessageEmbed()
-      .setTitle(`Debug`)
-      .setDescription(`Releases 1.0!`)
-      if(!command.debug == true) {
-        console.log(`${message.author.id} пытался ввести команду, которая в дебаге`)
-        message.channel.send({ embeds: [debug] })
-        return message.react('❌');
-      }
-      if (!cooldowns.has(command.name)) {
+  if(!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Collection());
       }
       const now = Date.now();

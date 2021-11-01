@@ -1,39 +1,33 @@
 const { Client, Intents, Collection } = require('discord.js');
 const client = new Client({ 
-        intents: [
-	Intents.FLAGS.GUILDS,
-	Intents.FLAGS.GUILD_MEMBERS,
-	Intents.FLAGS.GUILD_BANS,
-	Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,
-	Intents.FLAGS.GUILD_INTEGRATIONS,
-	Intents.FLAGS.GUILD_WEBHOOKS,
-	Intents.FLAGS.GUILD_INVITES,
-	Intents.FLAGS.GUILD_VOICE_STATES,
-	Intents.FLAGS.GUILD_PRESENCES,
-	Intents.FLAGS.GUILD_MESSAGES,
-	Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-	Intents.FLAGS.GUILD_MESSAGE_TYPING,
-	Intents.FLAGS.DIRECT_MESSAGES,
-	Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
-	Intents.FLAGS.DIRECT_MESSAGE_TYPING
-],
-        allowedMentions: { parse: ['users', 'roles'], repliedUser: false }
+  intents: [
+    Intents.FLAGS.GUILDS,
+  	Intents.FLAGS.GUILD_MEMBERS,
+  	Intents.FLAGS.GUILD_BANS,
+    Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,
+	  Intents.FLAGS.GUILD_INTEGRATIONS,
+  	Intents.FLAGS.GUILD_WEBHOOKS,
+  	Intents.FLAGS.GUILD_INVITES,
+	  Intents.FLAGS.GUILD_VOICE_STATES,
+   	Intents.FLAGS.GUILD_PRESENCES,
+	  Intents.FLAGS.GUILD_MESSAGES,
+  	Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+  	Intents.FLAGS.GUILD_MESSAGE_TYPING,
+  	Intents.FLAGS.DIRECT_MESSAGES,
+  	Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
+	  Intents.FLAGS.DIRECT_MESSAGE_TYPING
+  ],
+  allowedMentions: { parse: ['users', 'roles'], repliedUser: false }
 });
 const fs = require('fs');
-const { MongoClient } = require("mongodb");
 
 client.config = require('./config.json');
 client.commands = new Collection();
 client.cooldowns = new Collection();
-client.errors = require('./data/errors.json');
 client.emotes = require("./data/emojis.json");
-client.colors = require("./data/colors.json");
-client.color = 0x311432
-//client.shards = new ShardingManager("./shards.js");
+client.color = 0x00ff00
+//client.shards = new ShardingManager("./shards.js"); //shards
 client.aliases = new Collection();
-client.cache = {
-  reactions: new Map()
-}
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
@@ -56,12 +50,5 @@ for (const folder of commandFolders) {
 		console.log(`${folder} Загружено, ${file} Загружено!`)
 	}
 }
-
-client.mongo = new MongoClient(client.config.uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-client.database = client.mongo.db('Moonli');
-client.mongo.connect()
 
 client.login(client.config.token)
