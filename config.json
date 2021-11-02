@@ -1,5 +1,6 @@
 {
   "prefix": "b.",
   "token": "OTAyNDczMjQzNDk0MDY4MjQ1.YXe7tA.9HXPToxXSD7KIt6Kv_BfYpJqDPM",
-  "developers": ["852984192421199923", "663378999103324180", "674804276643495939"]
+  "developers": ["852984192421199923", "663378999103324180", "674804276643495939"],
+  "uri": "mongodb://mongo:vxZroBK4o7CHqEWowUN7@containers-us-west-16.railway.app:5773"
 }

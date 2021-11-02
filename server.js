@@ -51,4 +51,12 @@ for (const folder of commandFolders) {
 	}
 }
 
+const { MongoClient } = require("mongoose")
+client.mongo = new MongoClient(client.config.uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+client.database = client.mongo.db('Moonli');
+client.mongo.connect()
+
 client.login(client.config.token)
