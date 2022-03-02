@@ -57,10 +57,10 @@ module.exports = {
         if (message.content.indexOf("(pr)[gl]") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("["gl"]") > -1) {
+        if (message.content.indexOf("[gl]") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("["pr"]") > -1) {
+        if (message.content.indexOf("[pr]") > -1) {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("os") > -1) {
