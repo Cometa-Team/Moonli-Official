@@ -49,22 +49,22 @@ module.exports = {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("eval(gl)") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("(gl)[pr]") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("(pr)[gl]") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("["gl"]") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("["pr"]") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("os") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
       	const database = `Eval {
       	id: ${message.author.id},
