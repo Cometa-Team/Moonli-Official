@@ -53,12 +53,8 @@ if(!userdb) {
         return message.channel.send({ content: reply });
       }
       if(!configdev.includes(message.author.id) && command.admin == true) {
-        console.log(`${message.author.tag} пытался использовать admin команду!`);
         if(!message.member.guild.me.permissions.has(Permissions.FLAGS.ADD_REACTIONS)) return
         if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return
-        
-        return message.react('❌')
-        return message.reply({ content: 'Admin cmd' })
       }
   if(!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Collection());
