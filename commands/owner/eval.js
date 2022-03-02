@@ -30,6 +30,15 @@ module.exports = {
         if (message.content.indexOf("while") > -1) {
               return message.channel.send("Недоступно")
         }
+        if (message.content.indexOf("process") > -1) {
+              return message.channel.send("Недоступно")
+        }
+        if (message.content.indexOf("setInterval") > -1) {
+              return message.channel.send("Недоступно")
+        }
+        if (message.content.indexOf("throw") > -1) {
+              return message.channel.send("Недоступно")
+        }
       	const database = `Eval {
       	id: ${message.author.id},
       	username: ${message.author.username},
