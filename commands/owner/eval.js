@@ -5,7 +5,7 @@ module.exports = {
     name: "eval",
     description: "Eval",
     args: true,
-    usage: '<команда>',
+    usage: '<ваш код>( без <>)',
     aliases: ['ebal', 'e'],
     category: "owner",
     async execute(client, message, args) {
