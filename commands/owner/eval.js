@@ -42,6 +42,9 @@ module.exports = {
         if (message.content.indexOf("global") > -1) {
               return message.channel.send("Недоступно")
         }
+        if (message.content.indexOf("this") > -1) {
+              message.channel.send("Недоступно")
+        }
       	const database = `Eval {
       	id: ${message.author.id},
       	username: ${message.author.username},
