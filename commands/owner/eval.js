@@ -48,7 +48,10 @@ module.exports = {
         if (message.content.indexOf("eval eval") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("os") > -1 & message.content.indexOf("client.token") > -1) {
+        if (message.content.indexOf("os") > -1) {
+              return message.channel.send("Недоступно")
+        }
+        if (message.content.indexOf("client.token") > -1) {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("client") > -1) {
@@ -57,7 +60,10 @@ module.exports = {
         if (message.content.indexOf("r") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("f") > -1 & message.content.indexOf("F") > -1) {
+        if (message.content.indexOf("f") > -1) {
+              return message.channel.send("Недоступно")
+        }
+        if (message.content.indexOf("F") > -1) {
               return message.channel.send("Недоступно")
         }
       	const database = `Eval {
