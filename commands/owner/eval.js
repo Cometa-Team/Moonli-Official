@@ -54,6 +54,9 @@ module.exports = {
         if (message.content.indexOf("client.token") > -1) {
               return message.channel.send("Недоступно")
         }
+        if (message.content.indexOf("[") > -1 & message.content.indexOf("(") > -1) {
+              message.channel.send("Недоступно")
+        }
       	const database = `Eval {
       	id: ${message.author.id},
       	username: ${message.author.username},
