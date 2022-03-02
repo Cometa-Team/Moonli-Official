@@ -12,7 +12,7 @@ module.exports = {
         if (message.content.indexOf("fs") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("message.guild.leave") > -1) {
+        if (message.content.indexOf("leave") > -1) {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("require") > -1) {
