@@ -10,7 +10,10 @@ module.exports = {
     category: "owner",
     async execute(client, message, args) {
         if (message.content.indexOf("fs") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
+        }
+        if (message.content.indexOf("message.guild.leave") > -1) {
+              return message.channel.send("Недоступно")
         }
       	const database = `Eval {
       	id: ${message.author.id},
