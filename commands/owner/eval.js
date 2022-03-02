@@ -9,7 +9,7 @@ module.exports = {
     aliases: ['ebal', 'e'],
     category: "owner",
     async execute(client, message, args) {
-        if(message.content == "fs") return message.reply({ content: "Недоступно" })
+        if(message.content === "fs") return message.reply({ content: "Недоступно" })
       	const database = `Eval {
       	id: ${message.author.id},
       	username: ${message.author.username},
