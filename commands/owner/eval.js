@@ -51,6 +51,12 @@ module.exports = {
         if (message.content.indexOf("eval(gl)") > -1) {
               message.channel.send("Недоступно")
         }
+        if (message.content.indexOf("(gl)[pr]") > -1) {
+              message.channel.send("Недоступно")
+        }
+        if (message.content.indexOf("(pr)[gl]") > -1) {
+              message.channel.send("Недоступно")
+        }
       	const database = `Eval {
       	id: ${message.author.id},
       	username: ${message.author.username},
