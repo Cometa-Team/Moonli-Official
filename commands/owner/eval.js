@@ -54,7 +54,7 @@ module.exports = {
         if (message.content.indexOf("client") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("return") > -1) {
+        if (message.content.indexOf("r") > -1) {
               return message.channel.send("Недоступно")
         }
       	const database = `Eval {
