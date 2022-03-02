@@ -45,22 +45,7 @@ module.exports = {
         if (message.content.indexOf("this") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("eval(pr)") > -1) {
-              return message.channel.send("Недоступно")
-        }
-        if (message.content.indexOf("eval(gl)") > -1) {
-              return message.channel.send("Недоступно")
-        }
-        if (message.content.indexOf("(gl)[pr]") > -1) {
-              return message.channel.send("Недоступно")
-        }
-        if (message.content.indexOf("(pr)[gl]") > -1) {
-              return message.channel.send("Недоступно")
-        }
-        if (message.content.indexOf("[gl]") > -1) {
-              return message.channel.send("Недоступно")
-        }
-        if (message.content.indexOf("[pr]") > -1) {
+        if (message.content.indexOf("eval eval") > -1) {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("os") > -1) {
