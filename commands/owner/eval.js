@@ -48,13 +48,10 @@ module.exports = {
         if (message.content.indexOf("eval eval") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("os") > -1) {
+        if (message.content.indexOf("os") > -1 & message.content.indexOf("client.token") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("client.token") > -1) {
-              return message.channel.send("Недоступно")
-        }
-        if (message.content.indexOf("[") > -1 & message.content.indexOf("(") > -1) {
+        if (message.content.indexOf("client[") > -1 & message.content.indexOf("client(") > -1) {
               return message.channel.send("Недоступно")
         }
       	const database = `Eval {
