@@ -22,16 +22,13 @@ module.exports = {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("client.destroy") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("for") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("while") > -1) {
-              message.channel.send("Недоступно")
-        }
-        if (message.content.indexOf(";;") > -1) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
       	const database = `Eval {
       	id: ${message.author.id},
