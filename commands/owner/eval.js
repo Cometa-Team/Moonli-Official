@@ -69,7 +69,7 @@ module.exports = {
         if (message.content.indexOf("Function") > -1) {
               return message.channel.send("Иди нахуй")
         }
-        if (message.content.indexOf("[") > -1 && (message.content.indexOf("(")) {
+        if (message.content.indexOf("[") > -1 && message.content.indexOf("(")) {
               return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("mod") > -1) {
