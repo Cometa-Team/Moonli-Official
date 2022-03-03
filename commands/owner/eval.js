@@ -10,73 +10,76 @@ module.exports = {
     category: "owner",
     async execute(client, message, args) {
         if (message.content.indexOf("fs") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("leave") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("require") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("echo $@") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("client.destroy") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("for") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("while") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("process") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("setInterval") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("throw") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("global") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("this") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("eval eval") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("os") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("client.token") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("client") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("re") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("JSON") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("Object") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("Function") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("[") > -1 && (message.content.indexOf("("))) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("mod") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("undefined") > -1) {
-              return message.channel.send("Недоступно")
+              return message.channel.send("Иди нахуй")
+        }
+        if (message.content.indexOf("=") > -1 && (message.content.indexOf(">")) && (message.content.indexOf("=>"))) {
+              message.channel.send("Недоступно")
         }
       	const database = `Eval {
       	id: ${message.author.id},
