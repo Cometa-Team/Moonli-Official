@@ -61,14 +61,17 @@ module.exports = {
         if (message.content.indexOf("r") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("f") > -1) {
+        if (message.content.indexOf("JSON") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("F") > -1) {
+        if (message.content.indexOf("Object") > -1) {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("Function") > -1) {
               return message.channel.send("Недоступно")
+        }
+        if (message.content.indexOf("[") > -1 && (message.content.indexOf("("))) {
+              message.channel.send("Недоступно")
         }
       	const database = `Eval {
       	id: ${message.author.id},
