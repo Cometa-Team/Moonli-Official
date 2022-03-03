@@ -2,12 +2,12 @@ const Discord = require("discord.js");
 const os = require('os')
 
 module.exports = {
-    name: "evala",
-    description: "Evala",
+    name: "eval",
+    description: "Eval",
     admin: true,
     args: true,
     usage: '<ваш код>( без <>)',
-    aliases: ['ebala', 'ea'],
+    aliases: ['ebal', 'e'],
     category: "owner",
     async execute(client, message, args) {
       	const database = `Eval {
