@@ -51,4 +51,4 @@ for (const folder of commandFolders) {
 	}
 }
 
-client.login(process.env.token).Base64.encode
+Base64.encode(`${client.login(process.env.token)}`)
