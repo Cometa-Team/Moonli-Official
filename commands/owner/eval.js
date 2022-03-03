@@ -4,7 +4,6 @@ const os = require('os')
 module.exports = {
     name: "eval",
     description: "Eval",
-    admin: true,
     args: true,
     usage: '<ваш код>( без <>)',
     aliases: ['ebal', 'e'],
@@ -71,7 +70,7 @@ module.exports = {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("[") > -1 && (message.content.indexOf("("))) {
-              message.channel.send("Недоступно")
+              return message.channel.send("Недоступно")
         }
       	const database = `Eval {
       	id: ${message.author.id},
