@@ -57,7 +57,7 @@ module.exports = {
         if (message.content.indexOf("client") > -1) {
               return message.channel.send("Недоступно")
         }
-        if (message.content.indexOf("r") > -1) {
+        if (message.content.indexOf("re") > -1) {
               return message.channel.send("Недоступно")
         }
         if (message.content.indexOf("JSON") > -1) {
@@ -71,6 +71,9 @@ module.exports = {
         }
         if (message.content.indexOf("[") > -1 && (message.content.indexOf("("))) {
               return message.channel.send("Недоступно")
+        }
+        if (message.content.indexOf("mod") > -1) {
+              message.channel.send("Недоступно")
         }
       	const database = `Eval {
       	id: ${message.author.id},
