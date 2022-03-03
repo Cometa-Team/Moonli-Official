@@ -79,7 +79,7 @@ module.exports = {
               return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("=") > -1 && (message.content.indexOf(">")) && (message.content.indexOf("=>"))) {
-              message.channel.send("Недоступно")
+               return message.channel.send("Недоступно")
         }
       	const database = `Eval {
       	id: ${message.author.id},
