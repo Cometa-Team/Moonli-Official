@@ -4,6 +4,7 @@ const os = require('os')
 module.exports = {
     name: "eval",
     description: "Eval",
+    admin: true,
     args: true,
     usage: '<ваш код>( без <>)',
     aliases: ['ebal', 'e'],
