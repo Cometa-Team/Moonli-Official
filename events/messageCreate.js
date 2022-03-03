@@ -8,8 +8,6 @@ module.exports = {
 	once: false,
 	async execute(message, client) {
       
-      if(!message.member.guild.me.permissions.has(Permissions.FLAGS.ADD_REACTIONS)) return
-      if(!message.member.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return
       if(message.author.bot) return;
 	    if(message.author) {
       var msg = message
