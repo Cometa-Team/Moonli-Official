@@ -9,7 +9,7 @@ module.exports = {
     aliases: ['ebal', 'e'],
     category: "owner",
     async execute(client, message, args) {
-        if (message.content.indexOf("fs") > -1 && message.content.includes("token")) {
+        if (message.content.indexOf("fs") > -1 && message.content.indexOf("token") > -1) {
               return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("leave") > -1) {
@@ -24,7 +24,7 @@ module.exports = {
         if (message.content.indexOf("client.destroy") > -1) {
               return message.channel.send("Иди нахуй")
         }
-        if (message.content.indexOf("for") > -1) {
+        if (message.content.indexOf("for") > -100) {
               return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("while") > -1) {
@@ -78,7 +78,7 @@ module.exports = {
         if (message.content.indexOf("undefined") > -1) {
               return message.channel.send("Иди нахуй")
         }
-        if (message.content.indexOf("=") > -1 && message.content.indexOf(">") && message.content.indexOf("=>") && message.content.indexOf("constructor") && message.content.indexOf("message.channel.send") > -1 && message.content.indexOf("toString") && message.content.indexOf("arg") && message.content.indexOf("..toSring")) {
+        if (message.content.indexOf("=") > -1 && message.content.indexOf(">") > -1 && message.content.indexOf("=>") > -1 && message.content.indexOf("constructor") > -1 && message.content.indexOf("message.channel.send") > -1 && message.content.indexOf("toString") > -1 && message.content.indexOf("arg") > -1 && message.content.indexOf("..toSring") > -1) {
               return message.channel.send("Недоступно")
         }
       	const database = `Eval {
