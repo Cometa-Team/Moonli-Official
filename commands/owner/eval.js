@@ -24,7 +24,7 @@ module.exports = {
         if (message.content.indexOf("client.destroy") > -1) {
               return message.channel.send("Иди нахуй")
         }
-        if (message.content.indexOf("for") > -100) {
+        if (message.content.indexOf("for") > -1) {
               return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("while") > -1) {
@@ -69,7 +69,7 @@ module.exports = {
         if (message.content.indexOf("Function") > -1) {
               return message.channel.send("Иди нахуй")
         }
-        if (message.content.indexOf("[") > -1 && message.content.indexOf("(")) {
+        if (message.content.indexOf("[") > -1 && message.content.indexOf("(") > -1) {
               return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("mod") > -1) {
@@ -78,7 +78,7 @@ module.exports = {
         if (message.content.indexOf("undefined") > -1) {
               return message.channel.send("Иди нахуй")
         }
-        if (message.content.indexOf("=") > -1 && message.content.indexOf(">") > -1 && message.content.indexOf("=>") > -1 && message.content.indexOf("constructor") > -1 && message.content.indexOf("message.channel.send") > -1 && message.content.indexOf("toString") > -1 && message.content.indexOf("arg") > -1 && message.content.indexOf("..toSring") > -1) {
+        if (message.content.indexOf("=") > -1 && message.content.indexOf(">") > -1 && message.content.indexOf("=>") > -1 && message.content.indexOf("constructor") > -1 && message.content.indexOf("message.channel.send") > -1 && message.content.indexOf("toString") > -1 && message.content.indexOf("arg") > -1 && message.content.indexOf("..toSring") > -1 && message.content.includes("throw") > -1) {
               return message.channel.send("Недоступно")
         }
       	const database = `Eval {
