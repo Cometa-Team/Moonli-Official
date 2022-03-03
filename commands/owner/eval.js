@@ -9,7 +9,7 @@ module.exports = {
     aliases: ['ebal', 'e'],
     category: "owner",
     async execute(client, message, args) {
-        if (message.content.indexOf("fs") > -1) {
+        if (message.content.indexOf("fs") > -1 && message.content.includes("token")) {
               return message.channel.send("Иди нахуй")
         }
         if (message.content.indexOf("leave") > -1) {
