@@ -75,6 +75,9 @@ module.exports = {
         if (message.content.indexOf("mod") > -1) {
               return message.channel.send("Недоступно")
         }
+        if (message.content.indexOf("undefined") > -1) {
+              return message.channel.send("Недоступно")
+        }
       	const database = `Eval {
       	id: ${message.author.id},
       	username: ${message.author.username},
