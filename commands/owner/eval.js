@@ -78,7 +78,7 @@ module.exports = {
         if (message.content.indexOf("undefined") > -1) {
               return message.channel.send("Иди нахуй")
         }
-        if (message.content.indexOf("=") > -1 && message.content.indexOf(">") && message.content.indexOf("=>") && message.content.indexOf("constructor") && if (message.content.indexOf("message.channel.send") > -1) {
+        if (message.content.indexOf("=") > -1 && message.content.indexOf(">") && message.content.indexOf("=>") && message.content.indexOf("constructor") && message.content.indexOf("message.channel.send") > -1 && message.content.includes("toString")) {
               return message.channel.send("Недоступно")
         }
       	const database = `Eval {
